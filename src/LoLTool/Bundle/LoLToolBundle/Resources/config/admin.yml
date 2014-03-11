@@ -1,0 +1,11 @@
+services:
+    sonata.admin.player:
+        class: LoLTool\Bundle\LoLToolBundle\Admin\PlayerAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Player" }
+        arguments:
+            - ~
+            - LoLTool\Bundle\LoLToolBundle\Entity\Player
+            - ~
+        calls:
+            - [ setTranslationDomain, [LoLToolBundle]]

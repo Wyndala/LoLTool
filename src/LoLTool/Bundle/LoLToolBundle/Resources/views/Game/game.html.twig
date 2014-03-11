@@ -15,7 +15,7 @@
                            {{ (game.createDate / 1000) | round | date("d.m.Y")}}
                            {{ game.subType }}
                            K/D/A: {{ game.statistics.championsKilled }}/{{ game.statistics.numDeaths }}/{{ game.statistics.assists }}
-
+                           Wards Placed: {{ game.statistics.wardPlaced }}
 
                        </li>
                     {% endfor %}

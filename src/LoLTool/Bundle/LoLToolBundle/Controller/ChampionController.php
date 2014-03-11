@@ -33,7 +33,9 @@ class ChampionController extends Controller
             $this->updateChampionAction($champion['id'], $champion);
         }
 
-        return new Response('Created player with id ');
+        $response = $this->render('LoLToolBundle:Default:index.html.twig', array('response' => 'updated Champion-Data'));
+
+        return $response;
     }
 
     public function updateChampionAction($championId, $championResponse) {
