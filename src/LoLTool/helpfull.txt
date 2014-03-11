@@ -1,0 +1,1 @@
+lessc web/bundles/loltool/less/style.less web/bundles/loltool/css/style.css

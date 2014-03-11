@@ -1,0 +1,27 @@
+lo_l_tool_homepage:
+    pattern:  /data
+    defaults: { _controller: LoLToolBundle:Default:index }
+
+lo_l_tool_profile:
+    pattern:  /data/{playerId}
+    defaults: { _controller: LoLToolBundle:Default:singlePlayer }
+
+lo_l_tool_update:
+    pattern:  /player/update/{name}
+    defaults: { _controller: LoLToolBundle:Default:updatePlayer }
+
+lo_l_tool_recent:
+    pattern:  /player/recent/{playerId}/update
+    defaults: { _controller: LoLToolBundle:Game:updateRecentGames }
+
+lo_l_tool_game:
+    pattern:  /game/{gameId}
+    defaults: { _controller: LoLToolBundle:Game:updateGame }
+
+update_champion_data:
+    pattern: /champions/update/
+    defaults: { _controller: LoLToolBundle:Champion:updateChampionData }
+
+recent_game_list:
+    pattern: /player/recent/{playerId}
+    defaults: { _controller: LoLToolBundle:Game:listPlayerGames }

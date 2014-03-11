@@ -1,0 +1,27 @@
+{% extends 'LoLToolBundle::layout.html.twig' %}
+
+{% block title 'LoLTool Bundle' %}
+
+{% block container %}
+    <div class="block">
+        {% block content %}
+
+            <div class="profile">
+
+                <ul class="recent">
+                    {% for game in gameList %}
+                       <li {% if game.statistics.win %} class="green" {% endif %}>
+                           {{ game.champion.name }}
+                           {{ (game.createDate / 1000) | round | date("d.m.Y")}}
+                           {{ game.subType }}
+                           K/D/A: {{ game.statistics.championsKilled }}/{{ game.statistics.numDeaths }}/{{ game.statistics.assists }}
+
+
+                       </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        {% endblock %}
+    </div>
+{% endblock %}

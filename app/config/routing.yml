@@ -1,0 +1,4 @@
+lo_l_tool:
+    resource: "@LoLToolBundle/Resources/config/routing.yml"
+    prefix:   /
+

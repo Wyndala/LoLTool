@@ -1,0 +1,20 @@
+{% extends 'LoLToolBundle::layout.html.twig' %}
+
+{% block title 'LoLTool Bundle' %}
+
+{% block container %}
+    <div class="block">
+        {% block content %}
+
+            <div class="profile">
+                {{ player.name }} {{ player.summonerLevel }}
+
+                <div class="recent">
+                    <a href="{{ path('lo_l_tool_recent', { 'playerId': player.playerId }) }}">Update Recent Games</a><br/>
+                    <a href="{{ path('recent_game_list', { 'playerId': player.playerId }) }}">List recent Games</a>
+                </div>
+            </div>
+
+        {% endblock %}
+    </div>
+{% endblock %}

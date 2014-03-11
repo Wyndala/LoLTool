@@ -1,0 +1,27 @@
+{% extends 'LoLToolBundle::layout.html.twig' %}
+
+{% block container %}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-message">
+            <em>Notice</em>: {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% block content_header %}
+        <ul id="menu">
+            {% block content_header_more %}
+                <li><a href="{{ path('lo_l_tool_homepage') }}">Home</a></li>
+            {% endblock %}
+        </ul>
+
+        <div style="clear: both"></div>
+    {% endblock %}
+
+    <div class="block">
+        {% block content %}
+
+            {{ response }}
+
+        {% endblock %}
+    </div>
+{% endblock %}

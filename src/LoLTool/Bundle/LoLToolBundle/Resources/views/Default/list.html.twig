@@ -1,0 +1,17 @@
+{% extends 'LoLToolBundle::layout.html.twig' %}
+
+{% block title 'LoLTool Bundle' %}
+
+{% block container %}
+     <div class="block">
+        {% block content %}
+
+            <ul id="navigation">
+                {% for item in playerList %}
+                    <li><a href="{{ path('lo_l_tool_profile', { 'playerId': item.playerId }) }}">{{ item.name }}</a> <a href="{{ path('lo_l_tool_update', { 'name': item.name }) }}">Update</a></li>
+                {% endfor %}
+            </ul>
+
+        {% endblock %}
+    </div>
+{% endblock %}

@@ -1,0 +1,90 @@
+LoLTool\Bundle\LoLToolBundle\Entity\Statistics:
+    type: entity
+    table: null
+    repositoryClass: LoLTool\Bundle\LoLToolBundle\Entity\StatisticsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        playerId:
+            type: integer
+        totalDamageDealtToChampions:
+            type: integer
+        goldEarned:
+            type: integer
+        item2:
+            type: integer
+        item1:
+            type: integer
+        wardPlaced:
+            type: integer
+        item0:
+            type: integer
+        trueDamageDealtPlayer:
+            type: integer
+        trueDamageTaken:
+            type: integer
+        physicaldamageDealtPlayer:
+            type: integer
+        trueDamageDealtToChampions:
+            type: integer
+        totalUnitsHealed:
+            type: integer
+        largestCriticalStrike:
+            type: integer
+        level:
+            type: integer
+        neutralMinionsKilledYourJungle:
+            type: integer
+        magicDamageDealtToChampions:
+            type: integer
+        turretsKilled:
+            type: integer
+        magicDamageDealtPlayer:
+            type: integer
+        assists:
+            type: integer
+        totalDamageTaken:
+            type: integer
+        magicDamageTaken:
+            type: integer
+        numDeaths:
+            type: integer
+        totalTimeCrowdControlDealt:
+            type: integer
+        largestMultiKill:
+            type: integer
+        physicalDamageTaken:
+            type: integer
+        win:
+            type: boolean
+        team:
+            type: integer
+        totalDamageDealt:
+            type: integer
+        totalHeal:
+            type: integer
+        item4:
+            type: integer
+        item3:
+            type: integer
+        item6:
+            type: integer
+        minionsKilled:
+            type: integer
+        timePlayed:
+            type: integer
+        physicalDamageDealtToChampions:
+            type: integer
+        championsKilled:
+            type: integer
+        trueDamageTaken:
+            type: integer
+        neutralMinionsKilled:
+            type: integer
+        goldSpent:
+            type: integer
+    lifecycleCallbacks: {  }

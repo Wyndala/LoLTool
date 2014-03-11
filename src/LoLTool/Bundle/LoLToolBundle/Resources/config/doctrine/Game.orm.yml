@@ -1,0 +1,58 @@
+LoLTool\Bundle\LoLToolBundle\Entity\Game:
+    type: entity
+    table: null
+    repositoryClass: LoLTool\Bundle\LoLToolBundle\Entity\GameRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        gameId:
+            type: integer
+        invalid:
+            type: boolean
+        gameMode:
+            type: string
+            length: 255
+        gameType:
+            type: string
+            length: 255
+        subType:
+            type: string
+            length: 255
+        mapId:
+            type: integer
+        playerId:
+            type: integer
+        teamId:
+            type: integer
+        championId:
+            type: integer
+        spell1:
+            type: integer
+        spell2:
+            type: integer
+        level:
+            type: integer
+        createDate:
+            type: bigint
+        fellowPlayers:
+            type: json_array
+        statsId:
+            type: integer
+    lifecycleCallbacks: {  }
+    oneToOne:
+        statistics:
+          targetEntity: Statistics
+          joinColumn:
+            name: statsId
+            referencedColumnName: id
+    manyToOne:
+        champion:
+          targetEntity: Champion
+          joinColumn:
+            name: championId
+            referencedColumnName: championId
+

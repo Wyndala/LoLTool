@@ -1,0 +1,7 @@
+parameters:
+#    lo_l_tool.example.class: LoLTool\Bundle\LoLToolBundle\Example
+
+services:
+#    lo_l_tool.example:
+#        class: %lo_l_tool.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

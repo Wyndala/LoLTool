@@ -1,0 +1,33 @@
+LoLTool\Bundle\LoLToolBundle\Entity\Champion:
+    type: entity
+    table: null
+    repositoryClass: LoLTool\Bundle\LoLToolBundle\Entity\ChampionRepository
+    id:
+        championId:
+            type: integer
+            id: true
+            generator:
+                strategy: NONE
+    fields:
+        name:
+            type: string
+            length: 255
+        active:
+            type: boolean
+        attackRank:
+            type: integer
+        defenseRank:
+            type: integer
+        magicRank:
+            type: integer
+        difficultyRank:
+            type: integer
+        botEnabled:
+            type: boolean
+        freeToPlay:
+            type: boolean
+        botMmEnabled:
+            type: boolean
+        rankedPlayEnabled:
+            type: boolean
+    lifecycleCallbacks: {  }
