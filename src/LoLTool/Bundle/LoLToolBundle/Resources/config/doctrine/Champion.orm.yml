@@ -31,3 +31,6 @@ LoLTool\Bundle\LoLToolBundle\Entity\Champion:
         rankedPlayEnabled:
             type: boolean
     lifecycleCallbacks: {  }
+    manyToOne:
+        media:
+          targetEntity: Application\Sonata\MediaBundle\Entity\Media

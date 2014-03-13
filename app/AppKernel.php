@@ -18,11 +18,14 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new LoLTool\Bundle\LoLToolBundle\LoLToolBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            new Sonata\AdminBundle\SonataAdminBundle()
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

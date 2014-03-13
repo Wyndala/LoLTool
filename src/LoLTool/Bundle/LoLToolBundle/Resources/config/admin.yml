@@ -9,3 +9,9 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [LoLToolBundle]]
+
+    lo_l_tool.admin.champion:
+        class: LoLTool\Bundle\LoLToolBundle\Admin\ChampionAdmin
+        arguments: [~, LoLTool\Bundle\LoLToolBundle\Entity\Champion, LoLToolBundle:ChampionAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Champion}

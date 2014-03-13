@@ -332,4 +332,32 @@ class Champion
     {
         return $this->rankedPlayEnabled;
     }
+    /**
+     * @var \Application\Sonata\MediaBundle\Entity\Media
+     */
+    private $media;
+
+
+    /**
+     * Set media
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $media
+     * @return Champion
+     */
+    public function setMedia(\Application\Sonata\MediaBundle\Entity\Media $media = null)
+    {
+        $this->media = $media;
+
+        return $this;
+    }
+
+    /**
+     * Get media
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Media 
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
 }
