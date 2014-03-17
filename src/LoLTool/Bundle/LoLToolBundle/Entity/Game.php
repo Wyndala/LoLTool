@@ -211,7 +211,21 @@ class Game
      */
     public function getSubType()
     {
-        return $this->subType;
+       switch($this->subType) {
+           case 'NONE': return 'Custom Game';
+           case 'NORMAL': return 'Custom Game';
+           case 'NORMAL_3x3': return 'Normal 3 vs 3';
+           case 'ODIN_UNRANKED': return 'Dominion';
+           case 'ARAM_UNRANKED_5x5': return 'All Random All Mid';
+           case 'BOT': return 'Bot Game 5 vs 5';
+           case 'BOT_3x3': return 'Bot Game 3 vs 3';
+           case 'RANKED_SOLO_5x5': return 'Ranked Solo 5 vs 5';
+           case 'RANKED_TEAM_3x3': return 'Ranked Team 3 vs 3';
+           case 'RANKED_TEAM_5x5': return 'Ranked Team 5 vs 5';
+           default: return $this->subType;
+       }
+
+
     }
 
     /**

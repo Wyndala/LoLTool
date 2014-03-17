@@ -7,8 +7,16 @@
         {% block content %}
 
             <div class="profile">
-                {{ player.name }} {{ player.summonerLevel }}
-
+                <div class="summoner-icon">
+                    <img src="{{ asset('bundles/loltool/images/profileIcon603.jpg') }}" alt="summoner"/>
+                </div>
+                <header>
+                    <h1>{{ player.name }}</h1>
+                    <h3>
+                        Level {{ player.summonerLevel }}, Europe West
+                        <span class="ranked">{{ player.league.tier }} {{ player.league.rank }}</span>
+                    </h3>
+                </header>
                 <div class="recent">
                     <a href="{{ path('lo_l_tool_recent', { 'playerId': player.playerId }) }}">Update Recent Games</a><br/>
                     <a href="{{ path('recent_game_list', { 'playerId': player.playerId }) }}">List recent Games</a>

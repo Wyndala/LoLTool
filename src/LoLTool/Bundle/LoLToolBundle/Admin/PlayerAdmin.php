@@ -108,4 +108,29 @@ class PlayerAdmin extends Admin {
 
         return $playerResponse;
     }
+
+    public function getLeagueStatsResponseByPlayerId($playerId)
+    {
+        $url = 'https://prod.api.pvp.net/api/lol/euw/v2.3/league/by-summoner/' . $playerId  . '/entry?api_key='. $this->getConfigurationPool()->getContainer()->getParameter('api_key');
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => $url
+        ));
+
+        $resp = curl_exec($curl);
+
+        if(!curl_exec($curl)){
+            die('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
+        }
+
+        curl_close($curl);
+
+        $decodedResponse = json_decode($resp, true);
+        $playerResponse = array_pop($decodedResponse);
+
+        return $playerResponse;
+    }
 } 

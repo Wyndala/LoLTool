@@ -4,6 +4,7 @@ namespace LoLTool\Bundle\LoLToolBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use LoLTool\Bundle\LoLToolBundle\Entity\Champion;
+use Application\Sonata\MediaBundle\Entity\Media;
 
 class ChampionController extends Controller
 {
@@ -46,6 +47,8 @@ class ChampionController extends Controller
             $champion = new Champion();
         }
 
+        $champion->setMedia($this->createImage($championResponse['name']));
+
         $champion->setChampionId($championResponse['id']);
         $champion->setName($championResponse['name']);
         $champion->setActive($championResponse['active']);
@@ -60,7 +63,29 @@ class ChampionController extends Controller
         $em->persist($champion);
         $em->flush();
 
+        //Ahri_Square_0
+
         return 'Created player with id '.$champion->getChampionId();
+    }
+
+    /**
+     * @param $name
+     * @return Media
+     */
+
+    public function createImage($name) {
+        $kernel = $this->get('kernel');
+        $path = $kernel->locateResource('@LoLToolBundle/Resources/public/images/champions/' . $name . '_Square_0.png');
+
+        $mediaManager = $this->get('sonata.media.manager.media');
+        $media = new Media;
+        $media->setBinaryContent($path);
+        $media->setContext('default');
+        $media->setProviderName('sonata.media.provider.image');
+
+        $mediaManager->save($media);
+
+        return $media;
     }
 
 }

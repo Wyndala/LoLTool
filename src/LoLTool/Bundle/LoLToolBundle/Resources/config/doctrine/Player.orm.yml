@@ -19,3 +19,10 @@ LoLTool\Bundle\LoLToolBundle\Entity\Player:
         summonerLevel:
             type: integer
     lifecycleCallbacks: {  }
+    oneToOne:
+        league_3v3:
+          targetEntity: League
+        league_5v5:
+          targetEntity: League
+        league:
+          targetEntity: League
