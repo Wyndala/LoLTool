@@ -1,0 +1,44 @@
+LoLTool\Bundle\LoLToolBundle\Entity\League:
+    type: entity
+    table: null
+    repositoryClass: LoLTool\Bundle\LoLToolBundle\Entity\LeagueRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        isHotStreak:
+            type: boolean
+        isFreshBlood:
+            type: boolean
+        isVeteran:
+            type: boolean
+        leagueName:
+            type: string
+            length: 255
+        tier:
+            type: string
+            length: 255
+        lastPlayed:
+            type: integer
+        playerOrTeamId:
+            type: string
+            length: 255
+        leaguePoints:
+            type: integer
+        rank:
+            type: string
+            length: 255
+        isInactive:
+            type: boolean
+        queueType:
+            type: string
+            length: 255
+        playerOrTeamName:
+            type: string
+            length: 255
+        wins:
+            type: integer
+    lifecycleCallbacks: {  }
