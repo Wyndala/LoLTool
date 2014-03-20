@@ -202,7 +202,8 @@ class League
      */
     public function getTier()
     {
-        return $this->tier;
+
+        return ucfirst(strtolower($this->tier));
     }
 
     /**

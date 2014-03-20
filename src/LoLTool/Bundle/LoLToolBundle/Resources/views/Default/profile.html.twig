@@ -6,21 +6,80 @@
     <div class="block">
         {% block content %}
 
-            <div class="profile">
-                <div class="summoner-icon">
+            <div class="summoner-info main-part">
+                <div class="icon">
+                    <img src="http://lkimg.zamimg.com/shared/riot/images/profile_icons/profileIcon{{ player.summonerIconId }}.jpg" alt="summoner"/>
+                </div>
+                <div class="main-part-container">
+                    <header>
+                        <h1>{{ player.name }}</h1>
+                        <h3>
+                            Level {{ player.summonerLevel }}, Europe West
+                            <span class="ranked">{{ player.league.tier }} {{ player.league.rank }}</span>
+                        </h3>
+                    </header>
+                </div>
+            </div>
+            <div class="profile main-part">
+                <div class="icon">
                     <img src="{{ asset('bundles/loltool/images/profileIcon603.jpg') }}" alt="summoner"/>
                 </div>
-                <header>
-                    <h1>{{ player.name }}</h1>
-                    <h3>
-                        Level {{ player.summonerLevel }}, Europe West
-                        <span class="ranked">{{ player.league.tier }} {{ player.league.rank }}</span>
-                    </h3>
-                </header>
-                <div class="recent">
-                    <a href="{{ path('lo_l_tool_recent', { 'playerId': player.playerId }) }}">Update Recent Games</a><br/>
-                    <a href="{{ path('recent_game_list', { 'playerId': player.playerId }) }}">List recent Games</a>
+                <div class="main-part-container">
+                    <header>
+                        <h2>Profile</h2>
+                    </header>
+                    <div class="box">
+                        <h3>
+                            Ranked Team 3vs3
+                        </h3>
+                        <div class="inner-box">
+                            <img class="medal" src="http://lkimg.zamimg.com/images/medals/bronze_4.png" alt="summoner"/>
+                            <div class="league-information">
+                                <header class="text league-name">{{ player.league3v3.leagueName }}</header>
+                                <span class="text">{{ player.league3v3.tier }} {{ player.league3v3.rank }}</span><br/>
+                                <span class="small-text">{{ player.league3v3.leaguePoints }} League Points</span><br/>
+                                <br/>
+                                <span class="text">Wins {{ player.league3v3.wins }}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h3>
+                            Ranked Solo 5vs5
+                        </h3>
+                        <div class="inner-box">
+                            <img class="medal" src="http://lkimg.zamimg.com/images/medals/bronze_1.png" alt="summoner"/>
+                            <div class="league-information">
+                                <header class="text league-name">{{ player.league.leagueName }}</header>
+                                <span class="text">{{ player.league.tier }} {{ player.league.rank }}</span><br/>
+                                <span class="small-text">{{ player.league.leaguePoints }} League Points</span><br/>
+                                <br/>
+                                <span class="text">Wins {{ player.league.wins }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h3>
+                            Ranked Team 5vs5
+                        </h3>
+                        <div class="inner-box">
+                            <img class="medal" src="http://lkimg.zamimg.com/images/medals/bronze_5.png" alt="summoner"/>
+                            <div class="league-information">
+                                <header class="text league-name">{{ player.league5v5.leagueName }}</header>
+                                <span class="text">{{ player.league5v5.tier }} {{ player.league5v5.rank }}</span><br/>
+                                <span class="small-text">{{ player.league5v5.leaguePoints }} League Points</span><br/>
+                                <br/>
+                                <span class="text">Wins {{ player.league5v5.wins }}</span>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="recent main-part">
+                <a href="{{ path('lo_l_tool_recent', { 'playerId': player.playerId }) }}">Update Recent Games</a><br/>
+                <a href="{{ path('recent_game_list', { 'playerId': player.playerId }) }}">List recent Games</a>
             </div>
 
         {% endblock %}

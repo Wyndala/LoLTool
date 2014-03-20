@@ -1,15 +1,18 @@
 body {
   padding-top: 50px;
+  color: #fff;
 }
 img.bg-image {
-  height: 100%;
+  min-height: 100%;
   position: fixed;
   z-index: -1;
+  min-width: 100%;
 }
 img.bg-vignette {
-  height: 100%;
+  min-height: 100%;
   position: fixed;
   z-index: -1;
+  min-width: 100%;
 }
 h1,
 h2,
@@ -21,32 +24,77 @@ h3 {
 }
 h1 {
   font-size: 36px;
-  line-height: 30px;
+  line-height: 27px;
   text-transform: uppercase;
+}
+h2 {
+  font-size: 30px;
+  line-height: 22px;
 }
 h3 {
   font-size: 18px;
-  margin-top: 5px;
+  margin-top: 13px;
+  line-height: 13px;
 }
 h3 span {
   display: block;
   text-transform: uppercase;
+  margin-top: 5px;
 }
-.profile {
+.text {
+  font-size: 14px;
+  font-weight: 600;
+}
+.small-text {
+  font-size: 10px;
+  font-weight: 600;
+}
+.main-part {
   margin-top: 50px;
+  clear: both;
+  overflow: hidden;
 }
-.profile header {
-  border-left: 1px solid rgba(255, 255, 255, 0.7);
+.main-part header {
   padding-left: 15px;
+}
+.main-part .main-part-container {
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
   float: left;
 }
-.profile .summoner-icon {
+.main-part .icon {
   float: left;
   margin-right: 15px;
 }
-.profile .summoner-icon img {
+.main-part .icon img {
   width: 72px;
   height: 72px;
+}
+.main-part .box {
+  margin-left: 15px;
+  float: left;
+}
+.main-part .box h3 {
+  margin-top: 35px;
+}
+.main-part .box .inner-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 110px;
+  width: 260px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+.main-part .box .inner-box header.league-name {
+  padding: 0px 10px 10px 0px;
+}
+.main-part .box .inner-box .medal {
+  height: 100%;
+  float: left;
+}
+.main-part .box .inner-box .league-information {
+  padding: 10px 0px;
+  float: left;
+  line-height: 12px;
+  width: 150px;
 }
 div.recent {
   clear: both;
