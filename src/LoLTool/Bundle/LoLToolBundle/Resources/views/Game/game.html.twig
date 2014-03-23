@@ -10,20 +10,7 @@
 
                 <ul class="recent">
                     {% for game in gameList %}
-                       <li {% if game.statistics.win %} class="green" {% endif %}>
-                           <div class="champion-thumb">
-                               {% media game.champion.media, 'small' with {'class': 'myclass'} %}
-                               <br/>{{ game.champion.name }}
-                           </div>
-                           <div class="game-statistics">
-
-                           {{ (game.createDate / 1000) | round | date("d.m.Y")}}
-                           {{ game.subType }}
-                           K/D/A: {{ game.statistics.championsKilled }}/{{ game.statistics.numDeaths }}/{{ game.statistics.assists }}
-                           Wards Placed: {{ game.statistics.wardPlaced }}
-                           </div>
-                           <div class="clearfix"></div>
-                       </li>
+                        {% include 'LoLToolBundle:Game:single_game.html.twig' %}
                     {% endfor %}
                 </ul>
             </div>

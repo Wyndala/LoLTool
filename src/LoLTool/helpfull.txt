@@ -1,5 +1,3 @@
 lessc src/LoLTool/Bundle/LoLToolBundle/Resources/public/less/style.less src/LoLTool/Bundle/LoLToolBundle/Resources/public/css/style.css
 
-
-
-lessc src/LoLTool/Bundle/LoLToolBundle/Resources/public/less/style.less src/LoLTool/Bundle/LoLToolBundle/Resources/public/css/style.css
+PATH=$PATH:/c/xampp/php

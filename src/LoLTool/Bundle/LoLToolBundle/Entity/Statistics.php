@@ -17,122 +17,127 @@ class Statistics
     /**
      * @var integer
      */
-    private $playerId;
+    private $playerId = 0;
 
     /**
      * @var integer
      */
-    private $totalDamageDealtToChampions;
+    private $totalDamageDealtToChampions = 0;
 
     /**
      * @var integer
      */
-    private $goldEarned;
+    private $goldEarned = 0;
 
     /**
      * @var integer
      */
-    private $item2;
+    private $item2 = 0;
 
     /**
      * @var integer
      */
-    private $item1;
+    private $item1 = 0;
 
     /**
      * @var integer
      */
-    private $wardPlaced;
+    private $item5 = 0;
 
     /**
      * @var integer
      */
-    private $item0;
+    private $wardPlaced = 0;
 
     /**
      * @var integer
      */
-    private $trueDamageDealtPlayer;
+    private $item0 = 0;
 
     /**
      * @var integer
      */
-    private $physicaldamageDealtPlayer;
+    private $trueDamageDealtPlayer = 0;
 
     /**
      * @var integer
      */
-    private $trueDamageDealtToChampions;
+    private $physicaldamageDealtPlayer = 0;
 
     /**
      * @var integer
      */
-    private $totalUnitsHealed;
+    private $trueDamageDealtToChampions = 0;
 
     /**
      * @var integer
      */
-    private $largestCriticalStrike;
+    private $totalUnitsHealed = 0;
 
     /**
      * @var integer
      */
-    private $level;
+    private $largestCriticalStrike = 0;
 
     /**
      * @var integer
      */
-    private $neutralMinionsKilledYourJungle;
+    private $level = 0;
 
     /**
      * @var integer
      */
-    private $magicDamageDealtToChampions;
+    private $neutralMinionsKilledYourJungle = 0;
 
     /**
      * @var integer
      */
-    private $turretsKilled;
+    private $magicDamageDealtToChampions = 0;
 
     /**
      * @var integer
      */
-    private $magicDamageDealtPlayer;
+    private $turretsKilled = 0;
 
     /**
      * @var integer
      */
-    private $assists;
+    private $magicDamageDealtPlayer = 0;
 
     /**
      * @var integer
      */
-    private $magicDamageTaken;
+    private $assists = 0;
 
     /**
      * @var integer
      */
-    private $totalDamageTaken;
+    private $magicDamageTaken = 0;
 
     /**
      * @var integer
      */
-    private $numDeaths;
+    private $totalDamageTaken = 0;
 
     /**
      * @var integer
      */
-    private $totalTimeCrowdControlDealt;
+    private $numDeaths = 0;
 
     /**
      * @var integer
      */
-    private $largestMultiKill;
+    private $totalTimeCrowdControlDealt = 0;
 
     /**
      * @var integer
      */
-    private $physicalDamageTaken;
+    private $largestMultiKill = 0;
+
+    /**
+     * @var integer
+     */
+    private $physicalDamageTaken = 0;
 
     /**
      * @var boolean
@@ -142,67 +147,67 @@ class Statistics
     /**
      * @var integer
      */
-    private $team;
+    private $team = 0;
 
     /**
      * @var integer
      */
-    private $totalDamageDealt;
+    private $totalDamageDealt = 0;
 
     /**
      * @var integer
      */
-    private $totalHeal;
+    private $totalHeal = 0;
 
     /**
      * @var integer
      */
-    private $item4;
+    private $item4 = 0;
 
     /**
      * @var integer
      */
-    private $item3;
+    private $item3 = 0;
 
     /**
      * @var integer
      */
-    private $item6;
+    private $item6 = 0;
 
     /**
      * @var integer
      */
-    private $minionsKilled;
+    private $minionsKilled = 0;
 
     /**
      * @var integer
      */
-    private $timePlayed;
+    private $timePlayed = 0;
 
     /**
      * @var integer
      */
-    private $physicalDamageDealtToChampions;
+    private $physicalDamageDealtToChampions = 0;
 
     /**
      * @var integer
      */
-    private $championsKilled;
+    private $championsKilled = 0;
 
     /**
      * @var integer
      */
-    private $trueDamageTaken;
+    private $trueDamageTaken = 0;
 
     /**
      * @var integer
      */
-    private $neutralMinionsKilled;
+    private $neutralMinionsKilled = 0;
 
     /**
      * @var integer
      */
-    private $goldSpent;
+    private $goldSpent = 0;
 
     /**
      * @ORM\OneToOne(targetEntity="Player", inversedBy="statistics")
@@ -210,6 +215,17 @@ class Statistics
      */
     protected $player;
 
+    /**
+     * Set id
+     * @param integer $id
+     * @return League
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * Get id
@@ -227,7 +243,7 @@ class Statistics
      * @param integer $playerId
      * @return Statistics
      */
-    public function setPlayerId($playerId)
+    public function setPlayerId($playerId = 0)
     {
         $this->playerId = $playerId;
 
@@ -250,7 +266,7 @@ class Statistics
      * @param integer $totalDamageDealtToChampions
      * @return Statistics
      */
-    public function setTotalDamageDealtToChampions($totalDamageDealtToChampions)
+    public function setTotalDamageDealtToChampions($totalDamageDealtToChampions = 0)
     {
         $this->totalDamageDealtToChampions = $totalDamageDealtToChampions;
 
@@ -273,7 +289,7 @@ class Statistics
      * @param integer $goldEarned
      * @return Statistics
      */
-    public function setGoldEarned($goldEarned)
+    public function setGoldEarned($goldEarned = 0)
     {
         $this->goldEarned = $goldEarned;
 
@@ -314,6 +330,29 @@ class Statistics
     }
 
     /**
+     * Set item5
+     *
+     * @param integer $item5
+     * @return Statistics
+     */
+    public function setItem5($item5 = 0)
+    {
+        $this->item5 = $item5;
+
+        return $this;
+    }
+
+    /**
+     * Get item5
+     *
+     * @return integer
+     */
+    public function getItem5()
+    {
+        return $this->item5;
+    }
+
+    /**
      * Set item1
      *
      * @param integer $item1
@@ -342,7 +381,7 @@ class Statistics
      * @param integer $wardPlaced
      * @return Statistics
      */
-    public function setWardPlaced($wardPlaced)
+    public function setWardPlaced($wardPlaced = 0)
     {
         $this->wardPlaced = $wardPlaced;
 
@@ -388,7 +427,7 @@ class Statistics
      * @param integer $trueDamageDealtPlayer
      * @return Statistics
      */
-    public function setTrueDamageDealtPlayer($trueDamageDealtPlayer)
+    public function setTrueDamageDealtPlayer($trueDamageDealtPlayer = 0)
     {
         $this->trueDamageDealtPlayer = $trueDamageDealtPlayer;
 
@@ -411,7 +450,7 @@ class Statistics
      * @param integer $physicaldamageDealtPlayer
      * @return Statistics
      */
-    public function setPhysicaldamageDealtPlayer($physicaldamageDealtPlayer)
+    public function setPhysicaldamageDealtPlayer($physicaldamageDealtPlayer = 0)
     {
         $this->physicaldamageDealtPlayer = $physicaldamageDealtPlayer;
 
@@ -434,7 +473,7 @@ class Statistics
      * @param integer $trueDamageDealtToChampions
      * @return Statistics
      */
-    public function setTrueDamageDealtToChampions($trueDamageDealtToChampions)
+    public function setTrueDamageDealtToChampions($trueDamageDealtToChampions = 0)
     {
         $this->trueDamageDealtToChampions = $trueDamageDealtToChampions;
 
@@ -457,7 +496,7 @@ class Statistics
      * @param integer $totalUnitsHealed
      * @return Statistics
      */
-    public function setTotalUnitsHealed($totalUnitsHealed)
+    public function setTotalUnitsHealed($totalUnitsHealed = 0)
     {
         $this->totalUnitsHealed = $totalUnitsHealed;
 
@@ -480,7 +519,7 @@ class Statistics
      * @param integer $largestCriticalStrike
      * @return Statistics
      */
-    public function setLargestCriticalStrike($largestCriticalStrike)
+    public function setLargestCriticalStrike($largestCriticalStrike = 0)
     {
         $this->largestCriticalStrike = $largestCriticalStrike;
 
@@ -503,7 +542,7 @@ class Statistics
      * @param integer $level
      * @return Statistics
      */
-    public function setLevel($level)
+    public function setLevel($level = 0)
     {
         $this->level = $level;
 
@@ -526,7 +565,7 @@ class Statistics
      * @param integer $neutralMinionsKilledYourJungle
      * @return Statistics
      */
-    public function setNeutralMinionsKilledYourJungle($neutralMinionsKilledYourJungle)
+    public function setNeutralMinionsKilledYourJungle($neutralMinionsKilledYourJungle = 0)
     {
         $this->neutralMinionsKilledYourJungle = $neutralMinionsKilledYourJungle;
 
@@ -549,7 +588,7 @@ class Statistics
      * @param integer $magicDamageDealtToChampions
      * @return Statistics
      */
-    public function setMagicDamageDealtToChampions($magicDamageDealtToChampions)
+    public function setMagicDamageDealtToChampions($magicDamageDealtToChampions = 0)
     {
         $this->magicDamageDealtToChampions = $magicDamageDealtToChampions;
 
@@ -572,7 +611,7 @@ class Statistics
      * @param integer $turretsKilled
      * @return Statistics
      */
-    public function setTurretsKilled($turretsKilled)
+    public function setTurretsKilled($turretsKilled = 0)
     {
         $this->turretsKilled = $turretsKilled;
 
@@ -595,7 +634,7 @@ class Statistics
      * @param integer $magicDamageDealtPlayer
      * @return Statistics
      */
-    public function setMagicDamageDealtPlayer($magicDamageDealtPlayer)
+    public function setMagicDamageDealtPlayer($magicDamageDealtPlayer = 0)
     {
         $this->magicDamageDealtPlayer = $magicDamageDealtPlayer;
 
@@ -618,7 +657,7 @@ class Statistics
      * @param integer $assists
      * @return Statistics
      */
-    public function setAssists($assists)
+    public function setAssists($assists = 0)
     {
         $this->assists = $assists;
 
@@ -641,7 +680,7 @@ class Statistics
      * @param integer $totalDamageTaken
      * @return Statistics
      */
-    public function setTotalDamageTaken($totalDamageTaken)
+    public function setTotalDamageTaken($totalDamageTaken = 0)
     {
         $this->totalDamageTaken = $totalDamageTaken;
 
@@ -665,7 +704,7 @@ class Statistics
      * @param integer $magicDamageTaken
      * @return Statistics
      */
-    public function setMagicDamageTaken($magicDamageTaken)
+    public function setMagicDamageTaken($magicDamageTaken = 0)
     {
         $this->magicDamageTaken = $magicDamageTaken;
 
@@ -688,7 +727,7 @@ class Statistics
      * @param integer $numDeaths
      * @return Statistics
      */
-    public function setNumDeaths($numDeaths)
+    public function setNumDeaths($numDeaths = 0)
     {
         $this->numDeaths = $numDeaths;
 
@@ -711,7 +750,7 @@ class Statistics
      * @param integer $totalTimeCrowdControlDealt
      * @return Statistics
      */
-    public function setTotalTimeCrowdControlDealt($totalTimeCrowdControlDealt)
+    public function setTotalTimeCrowdControlDealt($totalTimeCrowdControlDealt = 0)
     {
         $this->totalTimeCrowdControlDealt = $totalTimeCrowdControlDealt;
 
@@ -734,7 +773,7 @@ class Statistics
      * @param integer $largestMultiKill
      * @return Statistics
      */
-    public function setLargestMultiKill($largestMultiKill)
+    public function setLargestMultiKill($largestMultiKill = 0)
     {
         $this->largestMultiKill = $largestMultiKill;
 
@@ -757,7 +796,7 @@ class Statistics
      * @param integer $physicalDamageTaken
      * @return Statistics
      */
-    public function setPhysicalDamageTaken($physicalDamageTaken)
+    public function setPhysicalDamageTaken($physicalDamageTaken = 0)
     {
         $this->physicalDamageTaken = $physicalDamageTaken;
 
@@ -780,7 +819,7 @@ class Statistics
      * @param boolean $win
      * @return Statistics
      */
-    public function setWin($win)
+    public function setWin($win = 0)
     {
         $this->win = $win;
 
@@ -803,7 +842,7 @@ class Statistics
      * @param integer $team
      * @return Statistics
      */
-    public function setTeam($team)
+    public function setTeam($team = 0)
     {
         $this->team = $team;
 
@@ -826,7 +865,7 @@ class Statistics
      * @param integer $totalDamageDealt
      * @return Statistics
      */
-    public function setTotalDamageDealt($totalDamageDealt)
+    public function setTotalDamageDealt($totalDamageDealt = 0)
     {
         $this->totalDamageDealt = $totalDamageDealt;
 
@@ -849,7 +888,7 @@ class Statistics
      * @param integer $totalHeal
      * @return Statistics
      */
-    public function setTotalHeal($totalHeal)
+    public function setTotalHeal($totalHeal = 0)
     {
         $this->totalHeal = $totalHeal;
 
@@ -941,7 +980,7 @@ class Statistics
      * @param integer $minionsKilled
      * @return Statistics
      */
-    public function setMinionsKilled($minionsKilled)
+    public function setMinionsKilled($minionsKilled = 0)
     {
         $this->minionsKilled = $minionsKilled;
 
@@ -964,7 +1003,7 @@ class Statistics
      * @param integer $timePlayed
      * @return Statistics
      */
-    public function setTimePlayed($timePlayed)
+    public function setTimePlayed($timePlayed = 0)
     {
         $this->timePlayed = $timePlayed;
 
@@ -987,7 +1026,7 @@ class Statistics
      * @param integer $physicalDamageDealtToChampions
      * @return Statistics
      */
-    public function setPhysicalDamageDealtToChampions($physicalDamageDealtToChampions)
+    public function setPhysicalDamageDealtToChampions($physicalDamageDealtToChampions = 0)
     {
         $this->physicalDamageDealtToChampions = $physicalDamageDealtToChampions;
 
@@ -1010,7 +1049,7 @@ class Statistics
      * @param integer $championsKilled
      * @return Statistics
      */
-    public function setChampionsKilled($championsKilled)
+    public function setChampionsKilled($championsKilled = 0)
     {
         $this->championsKilled = $championsKilled;
 
@@ -1033,7 +1072,7 @@ class Statistics
      * @param integer $trueDamageTaken
      * @return Statistics
      */
-    public function setTrueDamageTaken($trueDamageTaken)
+    public function setTrueDamageTaken($trueDamageTaken = 0)
     {
         $this->trueDamageTaken = $trueDamageTaken;
 
@@ -1056,7 +1095,7 @@ class Statistics
      * @param integer $neutralMinionsKilled
      * @return Statistics
      */
-    public function setNeutralMinionsKilled($neutralMinionsKilled)
+    public function setNeutralMinionsKilled($neutralMinionsKilled = 0)
     {
         $this->neutralMinionsKilled = $neutralMinionsKilled;
 
@@ -1079,7 +1118,7 @@ class Statistics
      * @param integer $goldSpent
      * @return Statistics
      */
-    public function setGoldSpent($goldSpent)
+    public function setGoldSpent($goldSpent = 0)
     {
         $this->goldSpent = $goldSpent;
 

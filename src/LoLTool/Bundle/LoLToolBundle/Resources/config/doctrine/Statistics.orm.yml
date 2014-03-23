@@ -11,80 +11,160 @@ LoLTool\Bundle\LoLToolBundle\Entity\Statistics:
     fields:
         playerId:
             type: integer
+            options:
+                default: 0
         totalDamageDealtToChampions:
             type: integer
+            options:
+                default: 0
         goldEarned:
             type: integer
+            options:
+                default: 0
         item2:
             type: integer
+            options:
+                default: 0
         item1:
             type: integer
+            options:
+                default: 0
         wardPlaced:
             type: integer
+            options:
+                default: 0
         item0:
             type: integer
+            options:
+                default: 0
         trueDamageDealtPlayer:
             type: integer
+            options:
+                default: 0
         trueDamageTaken:
             type: integer
+            options:
+                default: 0
         physicaldamageDealtPlayer:
             type: integer
+            options:
+                default: 0
         trueDamageDealtToChampions:
             type: integer
+            options:
+                default: 0
         totalUnitsHealed:
             type: integer
+            options:
+                default: 0
         largestCriticalStrike:
             type: integer
+            options:
+                default: 0
         level:
             type: integer
+            options:
+                default: 0
         neutralMinionsKilledYourJungle:
             type: integer
+            options:
+                default: 0
         magicDamageDealtToChampions:
             type: integer
+            options:
+                default: 0
         turretsKilled:
             type: integer
+            options:
+                default: 0
         magicDamageDealtPlayer:
             type: integer
+            options:
+                default: 0
         assists:
             type: integer
+            options:
+                default: 0
         totalDamageTaken:
             type: integer
+            options:
+                default: 0
         magicDamageTaken:
             type: integer
+            options:
+                default: 0
         numDeaths:
             type: integer
+            options:
+                default: 0
         totalTimeCrowdControlDealt:
             type: integer
+            options:
+                default: 0
         largestMultiKill:
             type: integer
+            options:
+                default: 0
         physicalDamageTaken:
             type: integer
+            options:
+                default: 0
         win:
             type: boolean
         team:
             type: integer
+            options:
+                default: 0
         totalDamageDealt:
             type: integer
+            options:
+                default: 0
         totalHeal:
             type: integer
+            options:
+                default: 0
         item4:
             type: integer
+            options:
+                default: 0
+        item5:
+            type: integer
+            options:
+                default: 0
         item3:
             type: integer
+            options:
+                default: 0
         item6:
             type: integer
+            options:
+                default: 0
         minionsKilled:
             type: integer
+            options:
+                default: 0
         timePlayed:
             type: integer
+            options:
+                default: 0
         physicalDamageDealtToChampions:
             type: integer
+            options:
+                default: 0
         championsKilled:
             type: integer
+            options:
+                default: 0
         trueDamageTaken:
             type: integer
+            options:
+                default: 0
         neutralMinionsKilled:
             type: integer
+            options:
+                default: 0
         goldSpent:
             type: integer
+            options:
+                default: 0
     lifecycleCallbacks: {  }

@@ -213,15 +213,15 @@ class Game
     {
        switch($this->subType) {
            case 'NONE': return 'Custom Game';
-           case 'NORMAL': return 'Custom Game';
-           case 'NORMAL_3x3': return 'Normal 3 vs 3';
+           case 'NORMAL': return 'Normal 5vs5';
+           case 'NORMAL_3x3': return 'Normal 3vs3';
            case 'ODIN_UNRANKED': return 'Dominion';
-           case 'ARAM_UNRANKED_5x5': return 'All Random All Mid';
-           case 'BOT': return 'Bot Game 5 vs 5';
-           case 'BOT_3x3': return 'Bot Game 3 vs 3';
-           case 'RANKED_SOLO_5x5': return 'Ranked Solo 5 vs 5';
-           case 'RANKED_TEAM_3x3': return 'Ranked Team 3 vs 3';
-           case 'RANKED_TEAM_5x5': return 'Ranked Team 5 vs 5';
+           case 'ARAM_UNRANKED_5x5': return 'ARAM';
+           case 'BOT': return 'Bot 5vs5';
+           case 'BOT_3x3': return 'Bot 3vs3';
+           case 'RANKED_SOLO_5x5': return 'Solo 5vs5';
+           case 'RANKED_TEAM_3x3': return 'Team 3vs3';
+           case 'RANKED_TEAM_5x5': return 'Team 5vs5';
            default: return $this->subType;
        }
 
@@ -318,52 +318,6 @@ class Game
     public function getChampionId()
     {
         return $this->championId;
-    }
-
-    /**
-     * Set spell1
-     *
-     * @param integer $spell1
-     * @return Game
-     */
-    public function setSpell1($spell1)
-    {
-        $this->spell1 = $spell1;
-
-        return $this;
-    }
-
-    /**
-     * Get spell1
-     *
-     * @return integer 
-     */
-    public function getSpell1()
-    {
-        return $this->spell1;
-    }
-
-    /**
-     * Set spell2
-     *
-     * @param integer $spell2
-     * @return Game
-     */
-    public function setSpell2($spell2)
-    {
-        $this->spell2 = $spell2;
-
-        return $this;
-    }
-
-    /**
-     * Get spell2
-     *
-     * @return integer 
-     */
-    public function getSpell2()
-    {
-        return $this->spell2;
     }
 
     /**
@@ -511,5 +465,51 @@ class Game
     public function getChampion()
     {
         return $this->champion;
+    }
+
+    /**
+     * Set spell1
+     *
+     * @param \LoLTool\Bundle\LoLToolBundle\Entity\Spell $spell1
+     * @return Game
+     */
+    public function setSpell1(\LoLTool\Bundle\LoLToolBundle\Entity\Spell $spell1 = null)
+    {
+        $this->spell1 = $spell1;
+
+        return $this;
+    }
+
+    /**
+     * Get spell1
+     *
+     * @return \LoLTool\Bundle\LoLToolBundle\Entity\Spell 
+     */
+    public function getSpell1()
+    {
+        return $this->spell1;
+    }
+
+    /**
+     * Set spell2
+     *
+     * @param \LoLTool\Bundle\LoLToolBundle\Entity\Spell $spell2
+     * @return Game
+     */
+    public function setSpell2(\LoLTool\Bundle\LoLToolBundle\Entity\Spell $spell2 = null)
+    {
+        $this->spell2 = $spell2;
+
+        return $this;
+    }
+
+    /**
+     * Get spell2
+     *
+     * @return \LoLTool\Bundle\LoLToolBundle\Entity\Spell 
+     */
+    public function getSpell2()
+    {
+        return $this->spell2;
     }
 }

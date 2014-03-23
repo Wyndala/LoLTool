@@ -30,10 +30,6 @@ LoLTool\Bundle\LoLToolBundle\Entity\Game:
             type: integer
         championId:
             type: integer
-        spell1:
-            type: integer
-        spell2:
-            type: integer
         level:
             type: integer
         createDate:
@@ -55,4 +51,15 @@ LoLTool\Bundle\LoLToolBundle\Entity\Game:
           joinColumn:
             name: championId
             referencedColumnName: championId
+        spell1:
+          targetEntity: Spell
+          joinColumn:
+            name: spell1
+            referencedColumnName: spellKey
+        spell2:
+          targetEntity: Spell
+          joinColumn:
+            name: spell2
+            referencedColumnName: spellKey
+
 

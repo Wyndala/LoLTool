@@ -15,7 +15,7 @@
                         <h1>{{ player.name }}</h1>
                         <h3>
                             Level {{ player.summonerLevel }}, Europe West
-                            <span class="ranked">{{ player.league.tier }} {{ player.league.rank }}</span>
+                            {% if player.league %}<span class="ranked">{{ player.league.tier }} {{ player.league.rank }}</span>{% endif %}
                         </h3>
                     </header>
                 </div>
@@ -28,6 +28,7 @@
                     <header>
                         <h2>Profile</h2>
                     </header>
+                    {% if player.league3v3 %}
                     <div class="box">
                         <h3>
                             Ranked Team 3vs3
@@ -44,12 +45,14 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
+                    {% if player.league %}
                     <div class="box">
                         <h3>
                             Ranked Solo 5vs5
                         </h3>
                         <div class="inner-box">
-                            <img class="medal" src="http://lkimg.zamimg.com/images/medals/bronze_1.png" alt="summoner"/>
+                            <img class="medal" src="http://lkimg.zamimg.com/images/medals/silver_5.png" alt="summoner"/>
                             <div class="league-information">
                                 <header class="text league-name">{{ player.league.leagueName }}</header>
                                 <span class="text">{{ player.league.tier }} {{ player.league.rank }}</span><br/>
@@ -59,6 +62,8 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
+                    {% if player.league5v5 %}
                     <div class="box">
                         <h3>
                             Ranked Team 5vs5
@@ -75,11 +80,22 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
             <div class="recent main-part">
-                <a href="{{ path('lo_l_tool_recent', { 'playerId': player.playerId }) }}">Update Recent Games</a><br/>
-                <a href="{{ path('recent_game_list', { 'playerId': player.playerId }) }}">List recent Games</a>
+                <div class="icon">
+                    <img src="{{ asset('bundles/loltool/images/profileIcon603.jpg') }}" alt="summoner"/>
+                </div>
+                <div class="main-part-container">
+                    <header>
+                        <h2>Recent Games</h2>
+                    </header>
+                        {% for game in gameList %}
+                            {% include 'LoLToolBundle:Game:single_game.html.twig' %}
+                        {% endfor %}
+                <a href="{{ path('lo_l_tool_recent', { 'playerId': player.playerId }) }}">Update Recent Games</a>
+
             </div>
 
         {% endblock %}

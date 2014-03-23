@@ -1,0 +1,22 @@
+LoLTool\Bundle\LoLToolBundle\Entity\Spell:
+    type: entity
+    table: null
+    repositoryClass: LoLTool\Bundle\LoLToolBundle\Entity\SpellRepository
+    id:
+        spellKey:
+            type: string
+            id: true
+            generator:
+                strategy: NONE
+    fields:
+        id:
+            type: string
+            length: 255
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+        summonerLevel:
+            type: integer
+    lifecycleCallbacks: {  }

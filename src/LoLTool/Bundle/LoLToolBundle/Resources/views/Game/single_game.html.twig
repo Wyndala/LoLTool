@@ -1,0 +1,59 @@
+<div class="box {% if game.statistics.win %} win {% endif %} game">
+    <h3>
+        {{ (game.createDate / 1000) | round | date("d.m.Y")}}
+    </h3>
+    <div class="champion-box left">
+        <div class="name text">{{ game.champion.name }}</div>
+        <div class="image-container">
+            <img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/{{ game.champion.name }}.png" alt="summoner"/>
+        </div>
+    </div>
+    <div class="item-box left">
+        <div class="left">
+            {% if game.statistics.item0 %}<img class="column1 item0" src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/item/{{ game.statistics.item0 }}.png" alt="summoner"/>{% endif %}
+        </div>
+        <div class="left">
+            {% if game.statistics.item1 %}<img class="column2 item1" src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/item/{{ game.statistics.item1 }}.png" alt="summoner"/>{% endif %}
+        </div>
+        <div class="left">
+            {% if game.statistics.item2 %}<img class="column1 item2" src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/item/{{ game.statistics.item2 }}.png" alt="summoner"/>{% endif %}
+        </div>
+        <div class="left">
+            {% if game.statistics.item3 %}<img class="column2 item3"  src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/item/{{ game.statistics.item3 }}.png" alt="summoner"/>{% endif %}
+        </div>
+        <div class="left">
+            {% if game.statistics.item4 %}<img class="column1 item4" src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/item/{{ game.statistics.item4 }}.png" alt="summoner"/>{% endif %}
+        </div>
+        <div class="left">
+            {% if game.statistics.item5 %}<img class="column2 item5"  src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/item/{{ game.statistics.item5 }}.png" alt="summoner"/>{% endif %}
+        </div>
+    </div>
+    <div class="info-box left">
+        <div class="top">
+            <span class="text">{{ (game.statistics.goldEarned / 1000) | round(1) }}k</span><span class="small-text"> Gold</span><br/>
+            <span class="text">{{ game.statistics.minionsKilled }}</span><span class="small-text"> Creeps</span>
+        </div>
+        <div class="bottom">
+            <span class="text">~{{ (game.statistics.timePlayed / 60) | round}} min</span><br/>
+            <span class="small-text"> Game Length</span>
+        </div>
+    </div>
+    <div class="overview-box left">
+        <div class="text">{{ game.subType }}</div>
+        <div class="text">{{ game.statistics.championsKilled }} | {{ game.statistics.numDeaths }} | {{ game.statistics.assists }}</div>
+    </div>
+    <div class="spell-box left">
+        <div class="left">
+            <img class="column1 spell0"  src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/spell/{{ game.spell1.id }}.png" alt="summoner"/>
+        </div>
+        <div class="left">
+            <img class="column2 spell1"  src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/spell/{{ game.spell2.id }}.png" alt="summoner"/>
+        </div>
+    </div>
+    <div class="trinket-box left">
+        <img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/item/{{ game.statistics.item6 }}.png" alt="summoner"/>
+    </div>
+    <div class="detail-box left">
+
+    </div>
+</div>

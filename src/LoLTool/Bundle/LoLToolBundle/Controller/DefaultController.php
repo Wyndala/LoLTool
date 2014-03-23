@@ -5,6 +5,10 @@ namespace LoLTool\Bundle\LoLToolBundle\Controller;
 use LoLTool\Bundle\LoLToolBundle\Entity\Player;
 use LoLTool\Bundle\LoLToolBundle\Entity\League;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use LoLTool\Bundle\LoLToolBundle\Controller\GameController;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 
 class DefaultController extends Controller
 {
@@ -45,15 +49,15 @@ class DefaultController extends Controller
             $answer = $this->createAction($playerResponse);
         } else {
             $leagueResponse = $this->getLeagueStatsResponseByPlayerId($playerResponse['id']);
-
-            foreach ($leagueResponse as $leagueEntry) {
-                if ($leagueEntry['queueType'] == 'RANKED_TEAM_5x5') {
-                    $player->setLeague5v5($this->createLeagueAction($leagueEntry));
-                } else if ($leagueEntry['queueType'] == 'RANKED_TEAM_3x3') {
-                    $player->setLeague3v3($this->createLeagueAction($leagueEntry));
-                } else if ($leagueEntry['queueType'] == 'RANKED_SOLO_5x5') {
-
-                    $player->setLeague($this->createLeagueAction($leagueEntry));
+            if (is_array($leagueResponse)) {
+                foreach ($leagueResponse as $leagueEntry) {
+                    if ($leagueEntry['queueType'] == 'RANKED_TEAM_5x5') {
+                        $player->setLeague5v5($this->createLeagueAction($leagueEntry, $player->getLeague5v5()));
+                    } else if ($leagueEntry['queueType'] == 'RANKED_TEAM_3x3') {
+                        $player->setLeague3v3($this->createLeagueAction($leagueEntry, $player->getLeague3v3()));
+                    } else if ($leagueEntry['queueType'] == 'RANKED_SOLO_5x5') {
+                        $player->setLeague($this->createLeagueAction($leagueEntry, $player->getLeague()));
+                    }
                 }
             }
 
@@ -117,7 +121,12 @@ class DefaultController extends Controller
             ->getRepository('LoLToolBundle:Player')
             ->findOneBy(array('playerId' => $playerId));
 
-        $response = $this->render('LoLToolBundle:Default:profile.html.twig', array('player' => $player));
+        $gameController = new GameController();
+        $gameController->setContainer($this->container);
+
+        $gameList = $gameController->getPlayerGames($playerId);
+
+        $response = $this->render('LoLToolBundle:Default:profile.html.twig', array('player' => $player, 'gameList' => $gameList));
 
         return $response;
     }
@@ -143,33 +152,29 @@ class DefaultController extends Controller
 
         $decodedResponse = json_decode($resp, true);
 
+
         return $decodedResponse;
     }
 
     public function createLeagueAction($leagueResponse, $league = null)
     {
+
         if (!$league) {
             $league = new League();
         }
 
-        $league->setIsFreshBlood($leagueResponse['isFreshBlood']);
-        $league->setIsHotStreak($leagueResponse['isHotStreak']);
-        $league->setIsInactive($leagueResponse['isInactive']);
-        $league->setLastPlayed($leagueResponse['lastPlayed']);
-        $league->setLeagueName($leagueResponse['leagueName']);
-        $league->setTier($leagueResponse['tier']);
-        $league->setQueueType($leagueResponse['queueType']);
-        $league->setLeaguePoints($leagueResponse['leaguePoints']);
-        $league->setIsVeteran($leagueResponse['isVeteran']);
-        $league->setPlayerOrTeamId($leagueResponse['playerOrTeamId']);
-        $league->setRank($leagueResponse['rank']);
-        $league->setWins($leagueResponse['wins']);
-        $league->setPlayerOrTeamName($leagueResponse['playerOrTeamName']);
+        $normalizer = new GetSetMethodNormalizer();
+        $encoder = new JsonEncoder();
 
+        $serializer = new Serializer(array($normalizer), array($encoder));
+        $leagueResponse['id'] = $league->getId();
+        $leagueFromJSON = $serializer->deserialize(json_encode($leagueResponse),'LoLTool\Bundle\LoLToolBundle\Entity\League','json');
         $em = $this->getDoctrine()->getManager();
-        $em->persist($league);
+
+        $leagueFromJSON = $em->merge($leagueFromJSON);
+
         $em->flush();
 
-        return $league;
+        return $leagueFromJSON;
     }
 }

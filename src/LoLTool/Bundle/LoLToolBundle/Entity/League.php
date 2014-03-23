@@ -79,11 +79,22 @@ class League
      */
     private $wins;
 
+    /**
+     * Set id
+     * @param integer $id
+     * @return League
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {

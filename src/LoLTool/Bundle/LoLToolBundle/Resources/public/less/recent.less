@@ -1,0 +1,104 @@
+.main-part {
+  &.recent {
+    width: 2000%;
+  }
+  .box {
+    &.game {
+      width: 260px;
+    }
+    .champion-box {
+      background-color: rgba(0,0,0,0.7);
+      height: 110px;
+      width: 94px;
+      margin: 15px 3px 0px 0px;
+      overflow: hidden;
+      .name {
+        margin-left: 5px;
+      }
+      .image-container {
+        width: 85px;
+        height: 85px;
+        overflow: hidden;
+        margin-left: 5px;
+      }
+      img {
+        width: 91px;
+        height: 91px;
+        margin: -3px 0px 0px -3px;
+      }
+
+    }
+    img {
+      width: 32px;
+      height: 32px;
+      margin: 4px;
+      &.column1 {
+        margin: 3px 4px 0px 4px;
+      }
+      &.column2 {
+        margin: 3px 4px 0px 0px;
+      }
+      &.item0 {
+        margin-top: 4px;
+      }
+      &.item3 {
+        margin-top: 4px;
+      }
+    }
+    .item-box {
+      background-color: rgba(0,0,0,0.7);
+      width: 76px;
+      height: 110px;
+      margin: 15px 3px 0px 0px;
+      > div {
+        line-height: 0px;
+      }
+
+    }
+    .info-box {
+      background-color: rgba(0,0,0,0.7);
+      width: 84px;
+      height: 110px;
+      margin-top: 15px;
+      position: relative;
+      padding-left: 4px;
+      .top {
+        position: absolute;
+        top: 4px;
+      }
+      .bottom {
+        position: absolute;
+        bottom: 4px;
+      }
+    }
+    .overview-box {
+      background-color: @game-red;
+      padding-left: 5px;
+      width: 94px;
+      margin: 3px 3px 0px 0px;
+    }
+    &.win {
+      .overview-box {
+        background-color: @game-green;
+      }
+    }
+    .spell-box {
+      background-color: rgba(0,0,0,0.7);
+      width: 76px;
+      margin: 3px 3px 0px 0px;
+      height: 40px;
+    }
+    .trinket-box {
+      background-color: rgba(0,0,0,0.7);
+      width: 40px;
+      margin: 3px 3px 0px 0px;
+      height: 40px;
+    }
+    .detail-box {
+      background-color: rgba(0,0,0,0.7);
+      width: 41px;
+      margin: 3px 0px 0px 0px;
+      height: 40px;
+    }
+  }
+}

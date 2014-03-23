@@ -1,6 +1,7 @@
 body {
   padding-top: 50px;
   color: #fff;
+  font-family: Open Sans;
 }
 img.bg-image {
   min-height: 100%;
@@ -28,12 +29,12 @@ h1 {
   text-transform: uppercase;
 }
 h2 {
-  font-size: 30px;
-  line-height: 22px;
+  font-size: 32px;
+  line-height: 24px;
 }
 h3 {
   font-size: 18px;
-  margin-top: 13px;
+  margin-top: 11px;
   line-height: 13px;
 }
 h3 span {
@@ -48,6 +49,12 @@ h3 span {
 .small-text {
   font-size: 10px;
   font-weight: 600;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
 }
 .main-part {
   margin-top: 50px;
@@ -89,6 +96,8 @@ h3 span {
 .main-part .box .inner-box .medal {
   height: 100%;
   float: left;
+  width: auto;
+  margin: 0px;
 }
 .main-part .box .inner-box .league-information {
   padding: 10px 0px;
@@ -114,4 +123,100 @@ ul.recent li.green {
 .champion-thumb,
 .game-statistics {
   float: left;
+}
+.main-part.recent {
+  width: 2000%;
+}
+.main-part .box.game {
+  width: 260px;
+}
+.main-part .box .champion-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 110px;
+  width: 94px;
+  margin: 15px 3px 0px 0px;
+  overflow: hidden;
+}
+.main-part .box .champion-box .name {
+  margin-left: 5px;
+}
+.main-part .box .champion-box .image-container {
+  width: 85px;
+  height: 85px;
+  overflow: hidden;
+  margin-left: 5px;
+}
+.main-part .box .champion-box img {
+  width: 91px;
+  height: 91px;
+  margin: -3px 0px 0px -3px;
+}
+.main-part .box img {
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+}
+.main-part .box img.column1 {
+  margin: 3px 4px 0px 4px;
+}
+.main-part .box img.column2 {
+  margin: 3px 4px 0px 0px;
+}
+.main-part .box img.item0 {
+  margin-top: 4px;
+}
+.main-part .box img.item3 {
+  margin-top: 4px;
+}
+.main-part .box .item-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 76px;
+  height: 110px;
+  margin: 15px 3px 0px 0px;
+}
+.main-part .box .item-box > div {
+  line-height: 0px;
+}
+.main-part .box .info-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 84px;
+  height: 110px;
+  margin-top: 15px;
+  position: relative;
+  padding-left: 4px;
+}
+.main-part .box .info-box .top {
+  position: absolute;
+  top: 4px;
+}
+.main-part .box .info-box .bottom {
+  position: absolute;
+  bottom: 4px;
+}
+.main-part .box .overview-box {
+  background-color: rgba(255, 0, 0, 0.5);
+  padding-left: 5px;
+  width: 94px;
+  margin: 3px 3px 0px 0px;
+}
+.main-part .box.win .overview-box {
+  background-color: rgba(51, 213, 24, 0.5);
+}
+.main-part .box .spell-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 76px;
+  margin: 3px 3px 0px 0px;
+  height: 40px;
+}
+.main-part .box .trinket-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 40px;
+  margin: 3px 3px 0px 0px;
+  height: 40px;
+}
+.main-part .box .detail-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 41px;
+  margin: 3px 0px 0px 0px;
+  height: 40px;
 }
