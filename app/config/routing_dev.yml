@@ -16,3 +16,7 @@ _main:
 # AcmeDemoBundle routes (to be removed)
 _loltool:
     resource: "@LoLToolBundle/Resources/config/routing.yml"
+
+console:
+    resource: "@CoreSphereConsoleBundle/Resources/config/routing.yml"
+    prefix: /_console

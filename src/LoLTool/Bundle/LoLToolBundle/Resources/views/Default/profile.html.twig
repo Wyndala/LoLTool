@@ -33,7 +33,7 @@
                         <h3>
                             Ranked Team 3vs3
                         </h3>
-                        <div class="inner-box">
+                        <div class="inner-box black-03">
                             <img class="medal" src="http://lkimg.zamimg.com/images/medals/bronze_4.png" alt="summoner"/>
                             <div class="league-information">
                                 <header class="text league-name">{{ player.league3v3.leagueName }}</header>
@@ -51,7 +51,7 @@
                         <h3>
                             Ranked Solo 5vs5
                         </h3>
-                        <div class="inner-box">
+                        <div class="inner-box black-03">
                             <img class="medal" src="http://lkimg.zamimg.com/images/medals/silver_5.png" alt="summoner"/>
                             <div class="league-information">
                                 <header class="text league-name">{{ player.league.leagueName }}</header>
@@ -68,7 +68,7 @@
                         <h3>
                             Ranked Team 5vs5
                         </h3>
-                        <div class="inner-box">
+                        <div class="inner-box black-03">
                             <img class="medal" src="http://lkimg.zamimg.com/images/medals/bronze_5.png" alt="summoner"/>
                             <div class="league-information">
                                 <header class="text league-name">{{ player.league5v5.leagueName }}</header>
@@ -91,13 +91,17 @@
                     <header>
                         <h2>Recent Games</h2>
                     </header>
-                        {% for game in gameList %}
-                            {% include 'LoLToolBundle:Game:single_game.html.twig' %}
-                        {% endfor %}
-                <a href="{{ path('lo_l_tool_recent', { 'playerId': player.playerId }) }}">Update Recent Games</a>
+                    <div class="game-box-container">
 
+                    </div>
             </div>
-
+            <div class="clear"></div>
+            <a href="{{ path('lo_l_tool_recent', { 'playerId': player.playerId }) }}">Update Recent Games</a>
+            <script>
+                var playerData = {
+                    id: {{ player.playerId }}
+                }
+            </script>
         {% endblock %}
     </div>
 {% endblock %}

@@ -23,8 +23,13 @@ recent_game_list:
     defaults: { _controller: LoLToolBundle:Game:listPlayerGames }
 
 single_game:
-    pattern: /game/{gameId}
+    pattern: /game/{id}
     defaults: { _controller: LoLToolBundle:Game:showSingleGame }
+
+all_game_ids:
+    pattern: /player/{playerId}/games/ids/
+    defaults: { _controller: LoLToolBundle:Game:getAllGameIds }
+
 create_spell:
     pattern: /createSpell
     defaults: { _controller: LoLToolBundle:Spell:createSpell }

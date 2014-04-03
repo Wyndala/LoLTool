@@ -9,6 +9,7 @@ use LoLTool\Bundle\LoLToolBundle\Entity\Statistics;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class GameController extends Controller
 {
@@ -127,12 +128,22 @@ class GameController extends Controller
         return $games;
     }
 
-    public function showSingleGameAction($gameId) {
+    public function showSingleGameAction($id) {
         $game = $this->getDoctrine()
             ->getRepository('LoLToolBundle:Game')
-            ->findOneBy(array('gameId' => $gameId));
+            ->findOneBy(array('id' => $id));
         $response = $this->render('LoLToolBundle:Game:single_game.html.twig', array('game' => $game));
 
         return $response;
+    }
+
+    public function getAllGameIdsAction($playerId) {
+        $games = $this->getPlayerGames($playerId);
+        $ids = array();
+        foreach ($games as $game) {
+            $ids[] = $game->getId();
+        }
+
+        return new JsonResponse(array('games' => $ids));
     }
 }

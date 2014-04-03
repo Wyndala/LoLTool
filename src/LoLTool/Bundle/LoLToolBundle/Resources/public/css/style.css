@@ -42,6 +42,9 @@ h3 span {
   text-transform: uppercase;
   margin-top: 5px;
 }
+.black-03 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
 .text {
   font-size: 14px;
   font-weight: 600;
@@ -84,7 +87,6 @@ h3 span {
   margin-top: 35px;
 }
 .main-part .box .inner-box {
-  background-color: rgba(0, 0, 0, 0.7);
   height: 110px;
   width: 260px;
   margin-top: 5px;
@@ -131,7 +133,6 @@ ul.recent li.green {
   width: 260px;
 }
 .main-part .box .champion-box {
-  background-color: rgba(0, 0, 0, 0.7);
   height: 110px;
   width: 94px;
   margin: 15px 3px 0px 0px;
@@ -169,7 +170,6 @@ ul.recent li.green {
   margin-top: 4px;
 }
 .main-part .box .item-box {
-  background-color: rgba(0, 0, 0, 0.7);
   width: 76px;
   height: 110px;
   margin: 15px 3px 0px 0px;
@@ -178,7 +178,6 @@ ul.recent li.green {
   line-height: 0px;
 }
 .main-part .box .info-box {
-  background-color: rgba(0, 0, 0, 0.7);
   width: 84px;
   height: 110px;
   margin-top: 15px;
@@ -203,19 +202,16 @@ ul.recent li.green {
   background-color: rgba(51, 213, 24, 0.5);
 }
 .main-part .box .spell-box {
-  background-color: rgba(0, 0, 0, 0.7);
   width: 76px;
   margin: 3px 3px 0px 0px;
   height: 40px;
 }
 .main-part .box .trinket-box {
-  background-color: rgba(0, 0, 0, 0.7);
   width: 40px;
   margin: 3px 3px 0px 0px;
   height: 40px;
 }
 .main-part .box .detail-box {
-  background-color: rgba(0, 0, 0, 0.7);
   width: 41px;
   margin: 3px 0px 0px 0px;
   height: 40px;
