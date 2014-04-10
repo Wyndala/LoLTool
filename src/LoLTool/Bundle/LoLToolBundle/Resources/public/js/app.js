@@ -1,5 +1,5 @@
 $(function(){
-    var baseUrl = '/LoLTool';
+    var baseUrl = $('base').attr('href');
     // Create a model for the services
     var Game = Backbone.Model.extend({
 
@@ -10,7 +10,7 @@ $(function(){
             html: ''
         },
 
-        requestUrl: baseUrl + '/web/app_dev.php/game/',
+        requestUrl: baseUrl + '/game/',
 
         initialize: function(){
             $.ajax({
