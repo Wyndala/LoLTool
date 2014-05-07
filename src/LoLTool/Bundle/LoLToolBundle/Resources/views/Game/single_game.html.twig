@@ -1,4 +1,4 @@
-<div class="box {% if game.statistics.win %} win {% endif %} game">
+<div class="box {% if game.statistics.win %} win {% endif %} game" data-id="{{ game.id }}">
     <h3>
         {{ (game.createDate / 1000) | round | date("d.m.Y")}}
     </h3>

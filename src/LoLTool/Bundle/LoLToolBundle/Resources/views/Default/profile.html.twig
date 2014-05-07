@@ -90,13 +90,14 @@
                 <div class="main-part-container">
                     <header>
                         <h2>Recent Games</h2>
+                        <a id="update-games" href="{{ path('lo_l_tool_recent', { 'playerId': player.playerId }) }}">Update Recent Games</a>
                     </header>
                     <div class="game-box-container">
 
                     </div>
             </div>
             <div class="clear"></div>
-            <a href="{{ path('lo_l_tool_recent', { 'playerId': player.playerId }) }}">Update Recent Games</a>
+
             <script>
                 var playerData = {
                     id: {{ player.playerId }}
