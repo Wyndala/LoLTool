@@ -222,6 +222,7 @@ class Game
            case 'RANKED_SOLO_5x5': return 'Solo 5vs5';
            case 'RANKED_TEAM_3x3': return 'Team 3vs3';
            case 'RANKED_TEAM_5x5': return 'Team 5vs5';
+           case 'CAP_5x5': return 'Teambuilder';
            default: return $this->subType;
        }
 

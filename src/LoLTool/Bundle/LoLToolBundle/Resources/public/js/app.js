@@ -18,6 +18,7 @@ $(function(){
                 url: this.requestUrl + this.get('id'),  // use the same paramtre name as in Controller
                 success: function(data) {
                     this.set('html', data);
+
                     this.trigger('gameCreated');
                 },
                 error: function(){
@@ -36,23 +37,25 @@ $(function(){
 
         gameIds: [],
         initialize: function(){
+            //this.initGameFetching();
+        },
+
+        initGameFetching: function() {
             var self = this;
             $.getJSON( baseUrl + "/player/" + playerData.id + "/games/ids/", function( data ) {
                 self.gameIds = data.games;
                 self.addGame(self.gameIds);
             });
-
-
         },
 
         addGame: function(gameIds) {
             if (!gameIds.length) return false;
-            console.log(gameIds)
             var game = new Game({id: _.first(gameIds)});
             game.on('gameCreated', function() {
                 this.addGame(_.rest(gameIds));
             }, this);
             this.add(game);
+            game.set('html', '<div class="box" data-id="' + game.get('id') + '"><div class="loader">Loading</div></div>');
         },
 
         // Return an array only with the checked services
@@ -103,22 +106,46 @@ $(function(){
             // This is equivalent to listening on every one of the 
             // service objects in the collection.
             this.listenTo(games, 'change', this.render);
-
             // Create views for every one of the services in the
             // collection and add them to the page
+            $('#update-games').on('click' , $.proxy(this.updateGamesClickHandler, this));
 
-            games.each(function(game){
 
-                var view = new GameView({ model: game });
-                this.list.append(view.render().el);
+            games.initGameFetching();
+        },
 
-            }, this);	// "this" is the context in the callback
+        updateGamesClickHandler: function(event) {
+            event.preventDefault();
+            games.reset();
+            this.list.empty();
+            this.list.html('<div class="box" data-id="' + game.get('id') + '"><div class="loader">Loading</div></div>');
+            $.ajax({
+                type: 'GET',
+                url: $(event.currentTarget).attr('href'),
+                success: function(data) {
+                    //console.log(data);
+
+                    games.initGameFetching();
+
+                    // this.trigger('gameCreated');
+                },
+                error: function(){
+                    console.log("request error for id " + this.get('id'));
+                },
+                context: this
+            });
         },
 
         render: function(model, options){
-            console.log('collectionChange');
             var view = new GameView({ model: model });
-            this.list.append(view.render().el);
+            var existingModelDOM = this.list.find('[data-id=' + model.get('id') + ']');
+
+            if (existingModelDOM.length > 0) {
+                existingModelDOM.replaceWith(view.render().el);
+            } else {
+                // this.list.empty();
+                this.list.append(view.render().el);
+            }
 
             return this;
         }
