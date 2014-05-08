@@ -37,7 +37,7 @@ $(function(){
         gameIds: [],
         initialize: function(){
             var self = this;
-            $.getJSON( baseUrl + "/web/app_dev.php/player/" + playerData.id + "/games/ids/", function( data ) {
+            $.getJSON( baseUrl + "/player/" + playerData.id + "/games/ids/", function( data ) {
                 self.gameIds = data.games;
                 self.addGame(self.gameIds);
             });
